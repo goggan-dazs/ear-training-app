@@ -42,9 +42,38 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  min-height: 10vh;
 }
 
-.landing-h1{
-  margin: 20px;
+.home-h1{
+  margin-top: 350px;
 }
+
+.chords-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.playChordButton{
+  margin-top: 175px;
+}
+
+.interval-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1792x828px at 326ppi */
+@media only screen 
+    and (max-width: 450px) 
+    and (min-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) { 
+      .chords-wrapper{
+        display: flex;
+       flex-wrap: wrap;
+       margin: 20px;
+      }
+    }
