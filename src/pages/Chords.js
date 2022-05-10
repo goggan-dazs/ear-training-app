@@ -17,15 +17,13 @@ synth.set({ detune: -1200 });
 function Chords() {
   // let [tone, setTone] = useState([]);
   let tone =[ ["D4", "F#4", "A5"], ["D4", "F4", "A5"], ["D4", "F#4", "A#5"], ["D4", "F4", "Ab5"], ["C4", "E4", "G4"], ["C4", "Eb4", "G4"], ["C4", "Eb4", "Gb4"], ["C4", "E4", "G#4"] ]
-  // function setChord(){
-  //   setTone(["D4", "F#4", "A4"]);
-  // }
+  
   tone = tone.sort(() => Math.random() - 0.5);
-  // setChord();
+  
   function playSynth() {
     synth.triggerAttackRelease(tone[0], 1);
     console.log(tone)
-  }
+  } 
  
   return (
     <>

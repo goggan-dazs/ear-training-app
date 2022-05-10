@@ -34,17 +34,19 @@ function Intervals() {
         velocity: 0.5 
     }
 ], ).start(0);
+   function playInterval(){
+    Tone.Transport.start();
+    console.log("im working")
    
-        Tone.Transport.start();
-        console.log("im working")
-       
+   }
+        
     
     
 
     return (
         <>
         <div className="playChordButton">
-          <Button variant="outlined" >
+          <Button onClick={playInterval} variant="outlined" >
                 Play Inverval
           </Button>
         </div>
