@@ -46,7 +46,7 @@
 }
 
 .home-h1{
-  margin-top: 350px;
+  margin-top: 150px;
 }
 
 .chords-wrapper{
@@ -54,16 +54,28 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 50vh;
+  min-height: 20vh;
 }
 
 .playChordButton{
-  margin-top: 175px;
+  margin-top: 155px;
 }
 
 .interval-wrapper{
   display: flex;
   flex-direction: column;
+}
+
+.interval-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 20vh;
+}
+
+.playIntervalButton{
+  margin-top: 175px;
 }
 
 /* 1792x828px at 326ppi */
