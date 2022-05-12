@@ -119,6 +119,7 @@ function Chords() {
 
             return (
               <div className="chordButtons">
+            
               <Button
                 
                 variant="outlined"
