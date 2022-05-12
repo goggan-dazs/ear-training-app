@@ -1,6 +1,7 @@
 import * as Tone from "tone";
 import { useState } from "react";
 import Button from "@mui/material/Button";
+import { Typography } from "@mui/material";
 
 const answerObj = { chordAnswer: [], correctAns: "" };
 
@@ -64,13 +65,6 @@ function Intervals() {
     console.log(Tone.context.state);
   }
 
-  // const part = new Tone
-  //    function playInterval(){
-  //     Tone.Transport.start();
-  //     console.log("im working")
-  //     console.log(part);
-
-  //    }
   function playTonic() {
     synth.triggerAttackRelease(`${randomNote}3`, "8n");
   }
@@ -88,6 +82,12 @@ function Intervals() {
 
   return (
     <div className="pageContainer">
+      <div className="intervalsBlurb">
+        <Typography>
+          <strong>Intervals:</strong> In this exercise, you be given two notes.
+          Your goal is to identify the interval between the two notes.
+        </Typography>
+      </div>
       <div className="scoreBoard">
         <h3>
           Score: {scoreboard.score} out of {scoreboard.totalQs}
@@ -110,13 +110,19 @@ function Intervals() {
           className="the-one-button"
           onClick={playSound}
         >
-          Ascending Interval
+          Play Interval
+        </Button>
+      </div>
+
+      <div className="playAgainButton">
+        <Button variant="outlined" className="button" onClick={playSoundAgain}>
+          Hear Interval again
         </Button>
       </div>
 
       <div className="answerOptions">
-        <h2>What interval just played??</h2>
-        <div className="form">
+        <h2>What interval just played?</h2>
+        <div className="intervalForm">
           {intervalKeys.map((interval) => {
             const correctedName = interval.split("_");
             const corrected =
@@ -129,25 +135,22 @@ function Intervals() {
                 : "");
 
             return (
-              <Button
-                variant="outlined"
-                className="button"
-                key={interval}
-                value={interval}
-                name={interval}
-                onClick={intervalSelection}
-              >
-                {corrected}
-              </Button>
+              <div className="intervalAnswers">
+                <Button
+                  variant="outlined"
+                  className="button"
+                  key={interval}
+                  value={interval}
+                  name={interval}
+                  onClick={intervalSelection}
+                >
+                  {corrected}
+                </Button>
+              </div>
             );
           })}
         </div>
-      </div>
-
-      <div className="playAgainButton">
-        <Button variant="outlined" className="button" onClick={playSoundAgain}>
-          One more time pls
-        </Button>
+        
       </div>
     </div>
   );
@@ -155,4 +158,3 @@ function Intervals() {
 //
 
 export default Intervals;
-
